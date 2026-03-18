@@ -6,12 +6,16 @@ use App\Models\MenuItem;
 
 class MenuItemRepository
 {
-    public function paginateByRestaurant($restaurantId, $category = null)
+    public function paginateByRestaurant($restaurantId, $filters = [])
     {
         $query = MenuItem::where('restaurant_id', $restaurantId);
 
-        if ($category) {
-            $query->where('category', $category);
+        if (! empty($filters['category'])) {
+            $query->where('category', $filters['category']);
+        }
+
+        if (! empty($filters['search'])) {
+            $query->where('name', 'like', '%'.$filters['search'].'%');
         }
 
         return $query->paginate(10);
@@ -31,6 +35,7 @@ class MenuItemRepository
     {
         $item = MenuItem::findOrFail($id);
         $item->update($data);
+
         return $item;
     }
 

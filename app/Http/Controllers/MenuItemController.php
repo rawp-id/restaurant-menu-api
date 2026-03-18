@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\MenuItemService;
 use App\Http\Requests\StoreMenuItemRequest;
+use App\Services\MenuItemService;
 use Illuminate\Http\Request;
 
 class MenuItemController extends Controller
@@ -14,12 +14,14 @@ class MenuItemController extends Controller
 
     public function index($restaurantId, Request $request)
     {
+        $filters = [
+            'category' => $request->query('category'),
+            'search' => $request->query('search'),
+        ];
+
         return response()->json([
             'message' => 'Menu items retrieved successfully',
-            'data' => $this->service->list(
-                $restaurantId,
-                $request->query('category')
-            )
+            'data' => $this->service->list($restaurantId, $filters),
         ]);
     }
 
@@ -32,7 +34,7 @@ class MenuItemController extends Controller
 
         return response()->json([
             'message' => 'Menu item created successfully',
-            'data' => $item
+            'data' => $item,
         ], 201);
     }
 
@@ -40,7 +42,7 @@ class MenuItemController extends Controller
     {
         return response()->json([
             'message' => 'Menu item updated successfully',
-            'data' => $this->service->update($id, $request->validated())
+            'data' => $this->service->update($id, $request->validated()),
         ]);
     }
 
@@ -49,7 +51,7 @@ class MenuItemController extends Controller
         $this->service->delete($id);
 
         return response()->json([
-            'message' => 'Deleted successfully'
+            'message' => 'Deleted successfully',
         ]);
     }
 }
