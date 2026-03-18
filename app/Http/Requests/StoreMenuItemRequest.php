@@ -12,7 +12,7 @@ class StoreMenuItemRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,7 +26,7 @@ class StoreMenuItemRequest extends FormRequest
             'name' => 'required|string',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
-            'category' => 'nullable|string|in:appetizer,main,dessert,drink',
+            'category' => 'nullable|string|max:50',
             'is_available' => 'boolean'
         ];
     }
