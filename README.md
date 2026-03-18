@@ -230,6 +230,79 @@ Test coverage includes:
 
 ---
 
+## Running with Docker
+
+This project includes a Docker setup for easy local development and consistent environment configuration.
+
+### Requirements
+
+* Docker
+* Docker Compose
+
+### Build & Run Containers
+
+```bash
+docker compose up -d --build
+```
+
+### Run Migrations & Seeders
+
+```bash
+docker exec -it restaurant_app php artisan migrate --seed
+```
+
+### Access Application
+
+```
+http://localhost:8000
+```
+
+---
+
+### Environment Configuration (Docker)
+
+Make sure your `.env` is configured to use the Docker database service:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=restaurant_db
+DB_USERNAME=user
+DB_PASSWORD=root
+```
+
+---
+
+### Stopping Containers
+
+```bash
+docker compose down
+```
+
+---
+
+### Rebuild Without Cache (Optional)
+
+```bash
+docker compose build --no-cache
+docker compose up -d
+```
+
+---
+
+### Notes
+
+* File permissions are automatically handled inside the container.
+* The setup uses:
+
+  * PHP 8.4 (FPM)
+  * Nginx
+  * MySQL 8
+* Designed to reflect a production-like environment.
+
+---
+
 ## Author
 
 Rifky Aryo
