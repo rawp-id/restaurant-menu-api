@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\RestaurantService;
 use App\Http\Requests\StoreRestaurantRequest;
-use Illuminate\Http\Request;
+use App\Services\RestaurantService;
 
 class RestaurantController extends Controller
 {
@@ -14,44 +13,52 @@ class RestaurantController extends Controller
 
     public function index()
     {
-        return response()->json([
-            'message' => 'Restaurants retrieved successfully',
-            'data' => $this->service->list()
-        ]);
+        return $this->paginated(
+            $this->service->list(),
+            'Restaurants retrieved successfully'
+        );
     }
 
     public function store(StoreRestaurantRequest $request)
     {
         $restaurant = $this->service->create($request->validated());
 
-        return response()->json([
-            'message' => 'Restaurant created successfully',
-            'data' => $restaurant
-        ], 201);
+        return $this->success(
+            $restaurant,
+            'Restaurant created successfully',
+            201
+        );
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        return response()->json([
-            'message' => 'Restaurant retrieved successfully',
-            'data' => $this->service->detail($id)
-        ]);
+        $restaurant = $this->service->detail($id);
+
+        if (!$restaurant) {
+            return $this->error('Restaurant not found', null, 404);
+        }
+
+        return $this->success(
+            $restaurant,
+            'Restaurant retrieved successfully'
+        );
     }
 
-    public function update(StoreRestaurantRequest $request, $id)
+    public function update(StoreRestaurantRequest $request, int $id)
     {
-        return response()->json([
-            'message' => 'Restaurant updated successfully',
-            'data' => $this->service->update($id, $request->validated())
-        ]);
+        return $this->success(
+            $this->service->update($id, $request->validated()),
+            'Restaurant updated successfully'
+        );
     }
 
-    public function destroy($id)
+    public function destroy(int $id)
     {
         $this->service->delete($id);
 
-        return response()->json([
-            'message' => 'Deleted successfully'
-        ]);
+        return $this->success(
+            null,
+            'Restaurant deleted successfully'
+        );
     }
 }

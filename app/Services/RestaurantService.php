@@ -15,15 +15,9 @@ class RestaurantService
         return $this->repo->paginate();
     }
 
-    public function detail($id)
+    public function detail(int $id)
     {
-        $restaurant = $this->repo->find($id);
-
-        if (!$restaurant) {
-            abort(404, 'Restaurant not found');
-        }
-
-        return $restaurant;
+        return $this->repo->find($id);
     }
 
     public function create(array $data)
@@ -31,12 +25,12 @@ class RestaurantService
         return $this->repo->create($data);
     }
 
-    public function update($id, array $data)
+    public function update(int $id, array $data)
     {
         return $this->repo->update($id, $data);
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         return $this->repo->delete($id);
     }

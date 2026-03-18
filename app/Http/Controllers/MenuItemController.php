@@ -52,6 +52,7 @@ class MenuItemController extends Controller
 
         return response()->json([
             'message' => 'Deleted successfully',
+            'data' => null
         ]);
     }
 }
