@@ -9,6 +9,16 @@ The implementation focuses on clean architecture, maintainability, and practical
 
 ---
 
+## Live Demo
+
+Base URL:
+https://restaurant-menu-api.up.railway.app/
+
+Example Endpoint:
+https://restaurant-menu-api.up.railway.app/api/restaurants
+
+---
+
 ## Tech Stack
 
 * Laravel 13 (PHP ^8.4)
