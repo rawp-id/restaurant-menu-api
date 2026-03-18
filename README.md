@@ -11,7 +11,7 @@ The implementation focuses on clean architecture, maintainability, and practical
 
 ## Tech Stack
 
-* Laravel 13 (PHP ^8.3)
+* Laravel 13 (PHP ^8.4)
 * MySQL ^8
 * Laravel Sanctum (Token-based Authentication)
 * Eloquent ORM
