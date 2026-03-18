@@ -15,6 +15,7 @@ class RestaurantController extends Controller
     public function index()
     {
         return response()->json([
+            'message' => 'Restaurants retrieved successfully',
             'data' => $this->service->list()
         ]);
     }
@@ -24,6 +25,7 @@ class RestaurantController extends Controller
         $restaurant = $this->service->create($request->validated());
 
         return response()->json([
+            'message' => 'Restaurant created successfully',
             'data' => $restaurant
         ], 201);
     }
@@ -31,6 +33,7 @@ class RestaurantController extends Controller
     public function show($id)
     {
         return response()->json([
+            'message' => 'Restaurant retrieved successfully',
             'data' => $this->service->detail($id)
         ]);
     }
@@ -38,6 +41,7 @@ class RestaurantController extends Controller
     public function update(StoreRestaurantRequest $request, $id)
     {
         return response()->json([
+            'message' => 'Restaurant updated successfully',
             'data' => $this->service->update($id, $request->validated())
         ]);
     }

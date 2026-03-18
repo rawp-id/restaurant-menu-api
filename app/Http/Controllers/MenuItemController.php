@@ -15,6 +15,7 @@ class MenuItemController extends Controller
     public function index($restaurantId, Request $request)
     {
         return response()->json([
+            'message' => 'Menu items retrieved successfully',
             'data' => $this->service->list(
                 $restaurantId,
                 $request->query('category')
@@ -30,6 +31,7 @@ class MenuItemController extends Controller
         );
 
         return response()->json([
+            'message' => 'Menu item created successfully',
             'data' => $item
         ], 201);
     }
@@ -37,6 +39,7 @@ class MenuItemController extends Controller
     public function update(StoreMenuItemRequest $request, $id)
     {
         return response()->json([
+            'message' => 'Menu item updated successfully',
             'data' => $this->service->update($id, $request->validated())
         ]);
     }
