@@ -106,48 +106,48 @@
                             
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-green-100 text-green-700">POST</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Create a restaurant</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-blue-100 text-blue-700">GET</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">List all restaurants</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-blue-100 text-blue-700">GET</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants/:id</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants/:id</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Get restaurant detail (include menu items)</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-orange-100 text-orange-700">PUT</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants/:id</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants/:id</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Update a restaurant</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-red-100 text-red-700">DELETE</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants/:id</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants/:id</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Delete a restaurant</td>
                             </tr>
 
                             <tr class="hover:bg-slate-50 transition-colors border-t-2 border-slate-100">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-green-100 text-green-700">POST</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants/:id/menu_items</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants/:id/menu_items</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Add a menu item</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-blue-100 text-blue-700">GET</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/restaurants/:id/menu_items</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/restaurants/:id/menu_items</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">List menu items (support filter by category)</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-orange-100 text-orange-700">PUT</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/menu_items/:id</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/menu_items/:id</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Update a menu item</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 whitespace-nowrap"><span class="px-2.5 py-1 text-xs font-bold rounded bg-red-100 text-red-700">DELETE</span></td>
-                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/menu_items/:id</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-mono text-sm text-slate-700">/api/menu_items/:id</td>
                                 <td class="px-6 py-4 text-sm text-slate-600">Delete a menu item</td>
                             </tr>
 
